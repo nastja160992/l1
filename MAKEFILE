@@ -1,0 +1,11 @@
+ifneq ($(CROSS_COMPILE),)
+all: x86
+
+
+x86:
+	@echo "Compiling for x86."
+	gcc -c hello.c -o hello_x86.o
+	gcc hello_x86.o -o hello_x86
+
+clean:
+	rm -f *.o hello_x86 
